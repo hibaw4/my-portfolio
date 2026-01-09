@@ -1,4 +1,4 @@
-# Hiba Portfolio Website
+# Portfolio Website
 
 A modern, minimalist personal portfolio website built with React, Vite, and Tailwind CSS.
 
@@ -11,7 +11,7 @@ A modern, minimalist personal portfolio website built with React, Vite, and Tail
 - 🎯 SEO-friendly and accessible
 - 💫 Smooth scroll navigation
 
-## Sections
+<!-- ## Sections
 
 - **Hero Section** - Introduction with call-to-action buttons
 - **About Me** - Professional introduction
@@ -78,6 +78,7 @@ The project uses Tailwind CSS. You can customize:
 The contact form currently shows a success message. To integrate with a backend service:
 1. Update the `handleSubmit` function in `src/components/Contact.jsx`
 2. Add your form submission logic (e.g., using a service like Formspree, EmailJS, or your own backend)
+-->
 
 ## Technologies Used
 
@@ -89,5 +90,4 @@ The contact form currently shows a success message. To integrate with a backend 
 ## License
 
 This project is open source and available under the MIT License.
-
 
