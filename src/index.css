@@ -8,6 +8,8 @@
     --page-bg-strong: #ffffff;
     --card-bg: #fffafc;
     --card-bg-strong: #f3efe9;
+    --roadmap-width-offset: 9rem;
+    --roadmap-margin: 4rem;
     --surface-border: rgba(17, 17, 17, 0.12);
     --surface-border-strong: rgba(245, 207, 224, 0.7);
     --accent: #f5cfe0;
@@ -38,6 +40,8 @@
     --page-bg-strong: #111111;
     --card-bg: #1a1a1a;
     --card-bg-strong: #1f1f1f;
+    --roadmap-width-offset: 9rem;
+    --roadmap-margin: 4rem;
     --surface-border: rgba(255, 255, 255, 0.12);
     --surface-border-strong: rgba(245, 207, 224, 0.3);
     --text-default: #ffffff;
@@ -53,6 +57,7 @@
     background: var(--page-bg);
     color: var(--text-default);
   }
+
 
   .brand-script {
     font-family: 'Anonymous Pro', 'SFMono-Regular', 'Consolas', monospace;
@@ -93,11 +98,16 @@
     font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
   }
 
-  .theme-panel {
-    background: var(--card-bg-strong);
-    border: 1px solid var(--surface-border-strong);
-    font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
-    color: var(--text-soft);
+  .theme-panel { 
+    background: var(--card-bg-strong); 
+    border: 1px solid var(--surface-border-strong); 
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif; 
+    color: var(--text-soft); 
+  }
+
+  html.dark .theme-panel {
+    box-shadow: 0 6px 18px rgba(255, 255, 255, 0.055);
   }
 
   /* Small UI tokens */
@@ -231,6 +241,26 @@
 
   .project-gallery-item:hover {
     transform: scale(1.01);
+  }
+
+  .experience-period {
+    position: absolute;
+    right: 1rem;
+    top: 1.25rem;
+    text-align: right;
+    color: var(--text-soft);
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  @media (max-width: 767px) {
+    .experience-period {
+      position: static;
+      text-align: right;
+      margin-top: 0.25rem;
+    }
   }
 
   @keyframes projectDetailFadeIn {

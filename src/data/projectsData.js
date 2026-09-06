@@ -39,7 +39,7 @@ const projects = [
       'Designed the pipeline execution model with ephemeral workspaces, isolation, permissions, and artifact management',
       'Defined and documented the execution contract (structure, artifacts, stage order) used by the backend orchestration layer',
     ],
-    timeframe: 'Nov 2025 - Jan 2026',
+    timeframe: 'Nov. 2025 - Jan. 2026',
   },
   {
     name: 'OurBusWay',
@@ -75,7 +75,7 @@ const projects = [
       'Automated local multi-repo setup using Bash scripts and Docker Compose',
       'Deployed all services to a single VM using Docker Compose for orchestration and container management',
     ],
-    timeframe: 'Oct 2025 - Dec 2025',
+    timeframe: 'Oct. - Dec. 2025',
   },
   {
     name: 'AWS Migration to 3-Tier Architecture & DevSecOps Automation',
@@ -96,7 +96,7 @@ const projects = [
       'Deployed infrastructure with Terraform: VPC, subnets, ASG, bastion, NAT, Secrets Manager, CloudWatch',
       'Implemented secure CI/CD pipelines integrating SAST, Trivy, and DAST with OWASP ZAP',
     ],
-    timeframe: 'Oct 2025 - Dec 2025',
+    timeframe: 'Oct. - Dec. 2025',
   },
   {
     name: 'TravelAdvisor360',
@@ -123,7 +123,7 @@ const projects = [
       'Integrated external APIs (OpenAI, Geoapify, Amadeus) for intelligent planning features',
       'Implemented local SQLite database for offline favorites, history, and trip plans',
     ],
-    timeframe: 'Mar 2025 - May 2025',
+    timeframe: 'Mar. - May. 2025',
   },
   {
     name: 'Space Gateway',
@@ -157,7 +157,7 @@ const projects = [
       'Established a Jenkins CI/CD pipeline with unit tests and automated health checks',
       'Added basic monitoring using Prometheus and Grafana',
     ],
-    timeframe: 'Mar 2025 - May 2025',
+    timeframe: 'Mar. - May. 2025',
   },
   
   {
@@ -178,7 +178,7 @@ const projects = [
       'Implemented algorithms using scikit-learn and XGBoost for accurate compatibility prediction',
       'Created a web interface with data visualization using Pandas, Seaborn, and Matplotlib',
     ],
-    timeframe: 'Mar 2025 - May 2025',
+    timeframe: 'Mar. - May. 2025',
   },
   {
     name: 'Facial Emotion Recognition',
@@ -195,7 +195,7 @@ const projects = [
       'Implemented convolutional neural networks (CNNs) with transfer learning using the FER2013 dataset',
       'Integrated computer vision techniques for real-time facial image processing',
     ],
-    timeframe: 'Mar 2025 - May 2025',
+    timeframe: 'Mar. - May. 2025',
   },
 
   {
@@ -224,7 +224,7 @@ const projects = [
       'Integrated real-time internship offer management and application tracking',
       'Built an interactive dashboard for statistical monitoring and reporting',
     ],
-    timeframe: 'Oct 2025 - Nov 2025',
+    timeframe: 'Oct. - Nov. 2025',
   },
 ]
 
