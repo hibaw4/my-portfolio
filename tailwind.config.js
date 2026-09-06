@@ -12,9 +12,13 @@ export default {
       },
       colors: {
         accent: {
-          DEFAULT: '#ec4899',
-          dark: '#db2777',
-          light: '#f472b6',
+          DEFAULT: '#f5cfe0',
+          dark: '#eeb9d1',
+          light: '#fdeaf3',
+          soft: '#fff3f8',
+        },
+        slate: {
+          950: '#111111',
         },
       },
     },

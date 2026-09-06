@@ -47,12 +47,13 @@ const Contact = () => {
   ]
 
   return (
-    <section id="contact" className="section-padding bg-white dark:bg-gray-800">
+    <section id="contact" className="section-padding theme-page">
       <div className="container-max">
-        <div className="max-w-5xl mx-auto bg-gray-50 dark:bg-gray-900/50 rounded-2xl border border-gray-200 dark:border-gray-700 p-12">
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white text-center mb-12">
-            Get in Touch
-          </h2>
+        <div className="max-w-5xl mx-auto theme-card rounded-2xl p-12">
+          <div className="mb-6 text-left">
+            <div className="section-label">Contact</div>
+            <h2 className="section-title text-4xl font-bold text-[#111111] dark:text-white mb-6">Get in Touch</h2>
+          </div>
 
           {/* Top row: Email + LinkedIn */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -62,15 +63,12 @@ const Contact = () => {
                 href={item.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-4 p-6 rounded-xl bg-white dark:bg-gray-800 
-                           border border-gray-200 dark:border-gray-700 
-                           hover:border-accent dark:hover:border-pink-500 
-                           hover:shadow-md transition-all"
+                className="flex items-center gap-4 p-6 rounded-xl theme-card border border-[#f5cfe0] dark:border-[#f5cfe0]/40 hover:border-[#e7a9c3] hover:shadow-md transition-all"
               >
-                <span className="text-gray-700 dark:text-gray-300">{item.icon}</span>
+                <span className="text-[#111111] dark:text-white">{item.icon}</span>
                 <div>
-                  <p className="font-semibold text-gray-900 dark:text-white">{item.title}</p>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">{item.subtitle}</p>
+                  <p className="font-semibold text-[#111111] dark:text-white">{item.title}</p>
+                  <p className="text-[#2f2f2f] dark:text-[#f3d8e4] text-sm">{item.subtitle}</p>
                 </div>
               </a>
             ))}
@@ -82,15 +80,12 @@ const Contact = () => {
               href={contactItems[2].url}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full md:w-1/2 flex items-center gap-4 p-6 rounded-xl bg-white dark:bg-gray-800 
-                         border border-gray-200 dark:border-gray-700 
-                         hover:border-accent dark:hover:border-pink-500 
-                         hover:shadow-md transition-all"
+              className="w-full md:w-1/2 flex items-center gap-4 p-6 rounded-xl theme-card border border-[#f5cfe0] dark:border-[#f5cfe0]/40 hover:border-[#e7a9c3] hover:shadow-md transition-all"
             >
-              <span className="text-gray-700 dark:text-gray-300">{contactItems[2].icon}</span>
+              <span className="text-[#111111] dark:text-white">{contactItems[2].icon}</span>
               <div>
-                <p className="font-semibold text-gray-900 dark:text-white">{contactItems[2].title}</p>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">{contactItems[2].subtitle}</p>
+                <p className="font-semibold text-[#111111] dark:text-white">{contactItems[2].title}</p>
+                <p className="text-[#2f2f2f] dark:text-[#f3d8e4] text-sm">{contactItems[2].subtitle}</p>
               </div>
             </a>
           </div>

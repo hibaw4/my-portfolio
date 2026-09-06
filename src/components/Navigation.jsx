@@ -7,7 +7,6 @@ const Navigation = ({ isScrolled }) => {
 
   const navItems = [
     { label: 'Home', href: '#home' },
-    { label: 'About', href: '#about' },
     { label: 'Skills', href: '#skills' },
     { label: 'Projects', href: '#projects' },
     { label: 'Experience', href: '#experience' },
@@ -46,113 +45,124 @@ const Navigation = ({ isScrolled }) => {
   ]
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-white dark:bg-gray-800 shadow-md py-3'
-          : 'bg-transparent dark:bg-transparent py-5'
-      }`}
-    >
-      <div className="container-max px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
-          {/* Left side - Logo */}
-          <a
-            href="#home"
-            onClick={(e) => handleNavClick(e, '#home')}
-            className="text-2xl font-bold text-gray-900 dark:text-white hover:text-accent dark:hover:text-accent-light transition-colors duration-200"
-          >
-            Hiba
-          </a>
+    <nav className="fixed left-0 right-0 top-0 z-50 w-full transition-all duration-300">
+      <div
+        className="w-full transition-all duration-300"
+        style={{
+          backgroundColor: '#111111',
+        }}
+      >
+        <div className="container-max px-2 py-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between">
+            {/* Left side - Logo */}
+            <a
+              href="#home"
+              onClick={(e) => handleNavClick(e, '#home')}
+              className="brand-script text-4xl text-white hover:text-[#e7a9c3] transition-colors duration-200"
+            >
+              hiba.
+            </a>
 
-          {/* Center - Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
-            {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                onClick={(e) => handleNavClick(e, item.href)}
-                className="text-gray-700 dark:text-gray-300 hover:text-accent dark:hover:text-accent-light transition-colors duration-200 font-medium"
-              >
-                {item.label}
-              </a>
-            ))}
-          </div>
-
-          {/* Right side - Social Icons & Theme Toggle */}
-          <div className="flex items-center space-x-4">
-            {/* Social Icons */}
-            <div className="flex items-center space-x-4">
-              {socialLinks.map((link) => (
+            {/* Center - Desktop Navigation */}
+            <div className="hidden md:flex space-x-8">
+              {navItems.map((item) => (
                 <a
-                  key={link.name}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-700 dark:text-gray-300 hover:text-accent dark:hover:text-accent-light transition-colors duration-200"
-                  aria-label={link.name}
+                  key={item.href}
+                  href={item.href}
+                  onClick={(e) => handleNavClick(e, item.href)}
+                  className="text-white hover:text-[#e7a9c3] transition-colors duration-200 font-medium"
                 >
-                  {link.icon}
+                  {item.label}
                 </a>
               ))}
             </div>
 
-            {/* Theme Toggle */}
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
-              aria-label="Toggle theme"
-            >
-              {theme === 'dark' ? (
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                </svg>
-              ) : (
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                </svg>
-              )}
-            </button>
+            {/* Right side - Social Icons & Theme Toggle */}
+            <div className="flex items-center space-x-4">
+              {/* Social Icons */}
+              <div className="flex items-center space-x-4">
+                {socialLinks.map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white hover:text-[#e7a9c3] transition-colors duration-200"
+                    aria-label={link.name}
+                  >
+                    {link.icon}
+                  </a>
+                ))}
+              </div>
 
-            {/* Mobile Menu Button */}
-            <button
-              className="md:hidden text-gray-700 dark:text-gray-300 focus:outline-none ml-4"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label="Toggle menu"
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+              {/* Theme Toggle */}
+              <button
+                onClick={toggleTheme}
+                className="p-2 rounded-lg text-white hover:bg-white/5 transition-colors duration-200"
+                aria-label="Toggle theme"
               >
-                {isMobileMenuOpen ? (
-                  <path d="M6 18L18 6M6 6l12 12" />
+                {theme === 'dark' ? (
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                    />
+                  </svg>
                 ) : (
-                  <path d="M4 6h16M4 12h16M4 18h16" />
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                    />
+                  </svg>
                 )}
-              </svg>
-            </button>
-          </div>
-        </div>
+              </button>
 
-        {/* Mobile Navigation */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 space-y-3">
-            {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                onClick={(e) => handleNavClick(e, item.href)}
-                className="block text-gray-700 dark:text-gray-300 hover:text-accent dark:hover:text-accent-light transition-colors duration-200 font-medium py-2"
+              {/* Mobile Menu Button */}
+              <button
+                className="md:hidden text-white focus:outline-none ml-4"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                aria-label="Toggle menu"
               >
-                {item.label}
-              </a>
-            ))}
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  {isMobileMenuOpen ? (
+                    <path d="M6 18L18 6M6 6l12 12" />
+                  ) : (
+                    <path d="M4 6h16M4 12h16M4 18h16" />
+                  )}
+                </svg>
+              </button>
+            </div>
           </div>
-        )}
+
+          {/* Mobile Navigation */}
+          {isMobileMenuOpen && (
+            <div className="md:hidden mt-4 pb-4 space-y-3 border-t border-white/10 pt-4">
+              {navItems.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={(e) => handleNavClick(e, item.href)}
+                  className="block text-white hover:text-[#e7a9c3] transition-colors duration-200 font-medium py-2"
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </nav>
   )

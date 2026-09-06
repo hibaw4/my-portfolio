@@ -10,34 +10,37 @@ const Skills = () => {
     {
       title: 'Programming Languages',
       icon: FiCode,
-      skills: ['Java', 'Python', 'JavaScript', 'TypeScript', 'C'],
+      skills: ['Java', 'Python', 'JavaScript'],
     },
     {
       title: 'Software Development',
       icon: FiTool,
-      skills: ['Spring Boot', 'JEE', 'Node.js', 'REST APIs', 'React', 'Angular'],
+      skills: ['Spring Boot', 'FastAPI', 'Node.js', 'REST APIs', 'React.js', 'Angular'],
     },
     {
       title: 'Cloud & DevOps',
       icon: FiCloud,
-      skills: ['AWS', 'Docker', 'Kubernetes', 'CI/CD', 'Terraform', 'Git', 'Linux'],
+      skills: ['OCI', 'AWS', 'Docker', 'CI/CD'],
     },
     {
       title: 'Databases & Tools',
       icon: FiDatabase,
-      skills: ['PostgreSQL', 'MySQL', 'Microsoft SQL Server', 'PL/SQL', 'Redis', 'Postman'],
+      skills: ['PostgreSQL', 'MySQL', 'Microsoft SQL Server', 'PL/SQL', 'Git', 'Linux', 'Bash', 'Postman', 'Figma'],
     },
   ]
 
   return (
     <section
       id="skills"
-      className="section-padding bg-gray-50 dark:bg-gray-900/50"
+      className="section-padding theme-page"
     >
       <div className="container-max">
-        <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center">
-          Technical Skills
-        </h2>
+          <div className="mb-6 text-left">
+            <div className="section-label">Technical skills</div>
+            {/* <h2 className="section-title text-4xl font-bold text-[#111111] dark:text-white mb-6">
+              Technical Skills
+            </h2> */}
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {skillCategories.map((category, index) => {
@@ -46,24 +49,22 @@ const Skills = () => {
             return (
               <div
                 key={index}
-                className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                className="theme-card p-8 rounded-xl shadow-md no-border"
               >
-                <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6 flex items-center gap-3">
-                  <Icon className="w-8 h-8 text-accent" />
-                  {category.title}
-                </h3>
+                <div className="mb-4 flex items-center gap-3">
+                  {/* <Icon className="w-8 h-8 text-[#f5cfe0]" /> */}
+                  <h3 className="skills-panel-title text-2xl text-[#111111] dark:text-white">
+                    {category.title}
+                  </h3>
+                </div>
 
                 <div className="flex flex-wrap gap-3">
                   {category.skills.map((skill, i) => (
-                    <span
-  key={i}
-  className="px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg font-medium 
-             hover:bg-pink-500 hover:text-white dark:hover:bg-pink-500 dark:hover:text-white 
-             transition-all duration-300 cursor-default"
->
-  {skill}
-</span>
-
+                    <div key={i} className="w-auto">
+                      <div className="skill-chip font-medium">
+                        {skill}
+                      </div>
+                    </div>
                   ))}
                 </div>
               </div>

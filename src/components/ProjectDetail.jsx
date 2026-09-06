@@ -17,70 +17,74 @@ const ProjectDetail = ({ project, onClose }) => {
     return () => window.removeEventListener('keydown', onKey)
   }, [lightboxOpen, project.screenshots.length])
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center">
+    <div className="fixed inset-0 z-50 flex items-center justify-center project-detail-overlay">
       <div className="absolute inset-0 bg-black/50" onClick={onClose} />
 
-      <div className="relative max-w-4xl w-full mx-4 bg-white dark:bg-gray-900 rounded-xl shadow-xl overflow-auto max-h-[90vh]">
-        <div className="p-6">
-          <div className="flex items-start justify-between">
-            <div>
-              <h1 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">{project.name}</h1>
-              {project.timeframe && (
-                <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">{project.timeframe}</p>
-              )}
+      <div className="project-modal relative max-w-4xl w-full mx-4 rounded-2xl overflow-hidden max-h-[90vh]">
+        <div className="p-6 bg-[#111111] text-white">
+          <div className="flex items-start justify-between gap-4">
+            <div className="min-w-0">
+              <h1 className="project-detail-title text-2xl md:text-3xl">{project.name}</h1>
             </div>
-            <button onClick={onClose} className="text-gray-700 dark:text-gray-300">✕</button>
+
+            <div className="flex items-center gap-3 shrink-0">
+              {project.timeframe && (
+                <p className="text-xs uppercase tracking-[0.18em] text-[#d7d7d7] whitespace-nowrap">
+                  {project.timeframe}
+                </p>
+              )}
+              <button onClick={onClose} className="text-[#f5cfe0] hover:text-white text-2xl leading-none">✕</button>
+            </div>
           </div>
 
-          <p className="mt-4 text-gray-700 dark:text-gray-300">{project.description}</p>
-
-          {project.details && (
-            <div className="mt-4">
-              <ul className="list-disc pl-5 mt-2 text-gray-700 dark:text-gray-300">
-                {project.details.map((d, i) => (
-                  <li key={i} className="mb-1">{d}</li>
-                ))}
-              </ul>
+          {project.categories && project.categories.length > 0 && (
+            <div className="mt-3 flex flex-wrap gap-2">
+              {project.categories.map((category, index) => (
+                <span
+                  key={index}
+                  className="text-[10px] sm:text-xs font-medium px-2.5 py-1 rounded-full border border-white/10 bg-[#1a1a1a] text-white"
+                >
+                  {category}
+                </span>
+              ))}
             </div>
           )}
 
-          <div className="mt-4">
+          <div className="mt-6 grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
+            <div>
+              <p className="text-[#2f2f2f] dark:text-[#d1d5db] leading-7">{project.description}</p>
+
+              {project.details && (
+                <ul className="mt-5 space-y-2 text-sm text-[#2f2f2f] dark:text-[#d1d5db]">
+                  {project.details.map((d, i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <span className="mt-1 text-[#f5cfe0]">•</span>
+                      <span>{d}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+
+            <div className="pt-1">
+              <p className="mb-3 text-xs uppercase tracking-[0.2em] text-[#d9d9d9]">Technologies</p>
+              <div className="flex flex-wrap gap-2">
+                {project.technologies.map((t, i) => (
+                  <span key={i} className="project-tech-tag">
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-6">
             {project.screenshots && project.screenshots.length > 0 ? (
-              <div className="mt-2 relative">
-                <div className="absolute -left-2 top-1/2 transform -translate-y-1/2 z-20">
-                  <button
-                    onClick={() => {
-                      const el = document.getElementById(`screenshots-${project.slug}`)
-                      if (el) el.scrollBy({ left: -300, behavior: 'smooth' })
-                    }}
-                    aria-label="Scroll left"
-                    className="p-2 bg-white dark:bg-gray-800 rounded-full shadow-md hover:scale-105 transition-transform ring-1 ring-gray-200 dark:ring-gray-700"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-700 dark:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                    </svg>
-                  </button>
-                </div>
-
-                <div className="absolute -right-2 top-1/2 transform -translate-y-1/2 z-20">
-                  <button
-                    onClick={() => {
-                      const el = document.getElementById(`screenshots-${project.slug}`)
-                      if (el) el.scrollBy({ left: 300, behavior: 'smooth' })
-                    }}
-                    aria-label="Scroll right"
-                    className="p-2 bg-white dark:bg-gray-800 rounded-full shadow-md hover:scale-105 transition-transform ring-1 ring-gray-200 dark:ring-gray-700"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-700 dark:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </button>
-                </div>
-
+              <div className="mt-2">
                 <div
                   id={`screenshots-${project.slug}`}
-                  className="mt-2 flex gap-3 overflow-x-auto py-2 px-2 scrollbar-hide"
-                  style={{ scrollBehavior: 'smooth' }}
+                  className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide"
+                  style={{ scrollSnapType: 'x mandatory', scrollBehavior: 'smooth' }}
                 >
                   {project.screenshots.map((src, i) => (
                     <img
@@ -88,7 +92,8 @@ const ProjectDetail = ({ project, onClose }) => {
                       src={src}
                       alt={`${project.name} screenshot ${i + 1}`}
                       onClick={() => { setActiveIndex(i); setLightboxOpen(true) }}
-                      className="flex-shrink-0 w-64 h-40 object-cover rounded-md shadow-md cursor-pointer hover:scale-105 transition-transform"
+                      className="project-gallery-item flex-shrink-0 w-64 h-40 object-cover rounded-xl cursor-pointer border border-white/10"
+                      style={{ scrollSnapAlign: 'start' }}
                     />
                   ))}
                 </div>
@@ -99,57 +104,48 @@ const ProjectDetail = ({ project, onClose }) => {
                     <div className="relative z-50 max-w-[90%] max-h-[90%] flex items-center">
                       <button
                         onClick={() => setActiveIndex((i) => Math.max(0, i - 1))}
-                        className="absolute left-[-2.5rem] md:left-[-3rem] p-2 bg-white dark:bg-gray-800 rounded-full shadow-md"
+                        className="absolute left-[-2.5rem] md:left-[-3rem] p-2 rounded-full bg-[#1a1a1a] border border-white/10 text-[#f5cfe0]"
                         aria-label="Previous image"
                       >
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-800 dark:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                         </svg>
                       </button>
 
-                      <img src={project.screenshots[activeIndex]} alt={`Large ${project.name} screenshot ${activeIndex + 1}`} className="max-w-full max-h-[80vh] rounded-md shadow-lg object-contain" />
+                      <img src={project.screenshots[activeIndex]} alt={`Large ${project.name} screenshot ${activeIndex + 1}`} className="max-w-full max-h-[80vh] rounded-xl shadow-lg object-contain border border-white/10" />
 
                       <button
                         onClick={() => setActiveIndex((i) => Math.min(project.screenshots.length - 1, i + 1))}
-                        className="absolute right-[-2.5rem] md:right-[-3rem] p-2 bg-white dark:bg-gray-800 rounded-full shadow-md"
+                        className="absolute right-[-2.5rem] md:right-[-3rem] p-2 rounded-full bg-[#1a1a1a] border border-white/10 text-[#f5cfe0]"
                         aria-label="Next image"
                       >
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-800 dark:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
                       </button>
 
-                      <button onClick={() => setLightboxOpen(false)} className="absolute top-[-2.5rem] right-0 p-2 bg-white dark:bg-gray-800 rounded-full shadow-md">
+                      <button onClick={() => setLightboxOpen(false)} className="absolute top-[-2.5rem] right-0 p-2 rounded-full bg-[#1a1a1a] border border-white/10 text-[#f5cfe0]">
                         ✕
                       </button>
                     </div>
                   </div>
                 )}
               </div>
-            ) : (
-              <div className="mt-2 text-gray-600 dark:text-gray-400">No screenshots added yet.</div>
-            )}
+            ) : null}
           </div>
 
-          <div className="mt-4">
-            <div className="flex flex-wrap gap-2 mt-2">
-              {project.technologies.map((t, i) => (
-                <span key={i} className="px-3 py-1 bg-white dark:bg-gray-800 text-accent text-sm rounded-md font-medium">
-                  {t}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-6 flex gap-3">
-            {project.github && (
-              <a href={project.github} target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-gray-800 text-white rounded-md">
-                GitHub
-              </a>
-            )}
-            {project.demo && project.demo !== '#' && (
-              <a href={project.demo} target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-accent text-white rounded-md">
-                Live Demo
+          <div className="mt-6 flex justify-end">
+            {project.github && project.github !== '#' && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-medium text-[#f5cfe0] hover:text-white transition-colors"
+              >
+                View project on GitHub
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="w-4 h-4">
+                  <path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 6v-3.9c0-1.1.3-1.7-1.2-2.5 3.8-.4 7.8-1.8 7.8-8.1A6.2 6.2 0 0020 3.5 5.9 5.9 0 0019.8 2s-1.6-.5-5.1 1.9a17.1 17.1 0 00-9 0C5.3 1.5 3.7 2 3.7 2A5.9 5.9 0 003.5 3.5 6.2 6.2 0 003.5 12c0 6.3 4 7.7 7.8 8.1-.8.7-1.5 1.9-1.5 3.8V22" />
+                </svg>
               </a>
             )}
           </div>

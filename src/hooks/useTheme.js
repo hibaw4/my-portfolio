@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 
 const useTheme = () => {
-  const [theme, setTheme] = useState('light')
+  const [theme, setTheme] = useState('dark')
 
   useEffect(() => {
     // Initialize theme from localStorage or default to light
     const savedTheme = localStorage.getItem('theme')
-    const initialTheme = savedTheme || 'light'
+    const initialTheme = savedTheme || 'dark'
     
     const root = document.documentElement
     root.classList.remove('dark')

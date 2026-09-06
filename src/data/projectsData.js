@@ -1,7 +1,22 @@
+const topics = [
+  'Full Stack',
+  'Microservices',
+  'Web',
+  'Mobile',
+  'Cloud',
+  'DevOps',
+  'DevSecOps',
+  'AI',
+  'ML',
+  'Low code',
+  'Oracle APEX'
+]
+
 const projects = [
   {
     name: 'Pipeline X',
     slug: 'pipeline-x',
+    categories: ['Full Stack', 'Web', 'DevSecOps'],
     description:
       'Secure CI/CD engine for automated pipeline execution with standardized reports and artifacts.',
     technologies: [
@@ -24,11 +39,12 @@ const projects = [
       'Designed the pipeline execution model with ephemeral workspaces, isolation, permissions, and artifact management',
       'Defined and documented the execution contract (structure, artifacts, stage order) used by the backend orchestration layer',
     ],
-    timeframe: '11/2025 - Present',
+    timeframe: 'Nov 2025 - Jan 2026',
   },
   {
     name: 'OurBusWay',
     slug: 'ourbusway',
+    categories: ['Full Stack', 'Web', 'Microservices', 'Cloud'],
     description:
       'Microservices-based urban transport management platform with end-to-end bus management and monitoring.',
     technologies: [
@@ -59,11 +75,12 @@ const projects = [
       'Automated local multi-repo setup using Bash scripts and Docker Compose',
       'Deployed all services to a single VM using Docker Compose for orchestration and container management',
     ],
-    timeframe: '10/2025 - 12/2025',
+    timeframe: 'Oct 2025 - Dec 2025',
   },
   {
     name: 'AWS Migration to 3-Tier Architecture & DevSecOps Automation',
     slug: 'aws-migration-devsecops',
+    categories: ['Cloud', 'DevSecOps'],
     description:
       'Migration of a PHP monolith to a secure AWS 3-tier architecture with an automated DevSecOps pipeline.',
     technologies: ['AWS', 'Terraform', 'Docker', 'GitHub Actions', 'SAST', 'DAST'],
@@ -79,11 +96,12 @@ const projects = [
       'Deployed infrastructure with Terraform: VPC, subnets, ASG, bastion, NAT, Secrets Manager, CloudWatch',
       'Implemented secure CI/CD pipelines integrating SAST, Trivy, and DAST with OWASP ZAP',
     ],
-    timeframe: '10/2025 - 12/2025',
+    timeframe: 'Oct 2025 - Dec 2025',
   },
   {
     name: 'TravelAdvisor360',
     slug: 'traveladvisor360',
+    categories: ['Full Stack', 'Mobile', 'AI'],
     description:
       'Mobile travel planning app that simplifies trip planning, searches, and personalized recommendations.',
     technologies: ['Android (Java)', 'SQLite', 'OpenAI API', 'Geoapify', 'Amadeus'],
@@ -105,11 +123,12 @@ const projects = [
       'Integrated external APIs (OpenAI, Geoapify, Amadeus) for intelligent planning features',
       'Implemented local SQLite database for offline favorites, history, and trip plans',
     ],
-    timeframe: '03/2025 - 05/2025',
+    timeframe: 'Mar 2025 - May 2025',
   },
   {
     name: 'Space Gateway',
     slug: 'space-gateway',
+    categories: ['Full Stack', 'Web', 'DevOps'],
     description:
       'Interactive web app showcasing space exploration data with real-time information and CI/CD.',
     technologies: [
@@ -138,12 +157,13 @@ const projects = [
       'Established a Jenkins CI/CD pipeline with unit tests and automated health checks',
       'Added basic monitoring using Prometheus and Grafana',
     ],
-    timeframe: '03/2025 - 05/2025',
+    timeframe: 'Mar 2025 - May 2025',
   },
   
   {
     name: 'Cosmetic Product Skin Compatibility Prediction',
     slug: 'cosmetic-property-prediction',
+    categories: ['Web', 'AI', 'ML'],
     description:
       'Web interface that provides the appropriate skin type based on cosmetic product ingredients using machine learning.',
     technologies: ['Python', 'Jupyter Notebook', 'scikit-learn', 'Sephora Dataset', 'Pandas', 'Seaborn', 'Matplotlib', 'XGBoost'],
@@ -158,11 +178,12 @@ const projects = [
       'Implemented algorithms using scikit-learn and XGBoost for accurate compatibility prediction',
       'Created a web interface with data visualization using Pandas, Seaborn, and Matplotlib',
     ],
-    timeframe: '03/2025 - 05/2025',
+    timeframe: 'Mar 2025 - May 2025',
   },
   {
     name: 'Facial Emotion Recognition',
     slug: 'facial-emotion-recognition',
+    categories: ['AI', 'ML'],
     description:
       'User interface to detect facial emotions in real-time from the camera using deep learning, transfer learning and CNNs.',
     technologies: ['Deep Learning', 'Transfer Learning', 'CNN', 'Python', 'TensorFlow', 'Keras', 'OpenCV'],
@@ -174,16 +195,17 @@ const projects = [
       'Implemented convolutional neural networks (CNNs) with transfer learning using the FER2013 dataset',
       'Integrated computer vision techniques for real-time facial image processing',
     ],
-    timeframe: '03/2025 - 05/2025',
+    timeframe: 'Mar 2025 - May 2025',
   },
 
   {
     name: 'Internship Management System',
     slug: 'internship-management-system',
+    categories: ['Full Stack', 'Web', 'Low code', 'Oracle APEX'],
     description:
       'Decentralized system using Oracle APEX and Oracle Database for real-time internship offer management and applications with interactive dashboard.',
     technologies: ['Oracle APEX', 'Oracle Database', 'Merise Methodology', 'REST API'],
-    github: 'https://github.com',
+    github: '',
     demo: '#',
     screenshots: [
       '/screenshots/internship-management-system/pageinscription.png',
@@ -202,7 +224,7 @@ const projects = [
       'Integrated real-time internship offer management and application tracking',
       'Built an interactive dashboard for statistical monitoring and reporting',
     ],
-    timeframe: '10/2025 - 11/2025',
+    timeframe: 'Oct 2025 - Nov 2025',
   },
 ]
 

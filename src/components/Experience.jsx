@@ -49,23 +49,26 @@ const Experience = () => {
   ]
 
   const getTypeColor = () => {
-    return 'bg-pink-100 dark:bg-pink-900/30 text-pink-700 dark:text-pink-300 border-pink-300 dark:border-pink-700'
+    return 'type-badge'
   }
 
   return (
-    <section id="experience" className="section-padding bg-gray-50 dark:bg-gray-900/50">
+    <section id="experience" className="section-padding theme-page">
       <div className="container-max">
-        <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center">
-          Professional Experience
-        </h2>
+          <div className="mb-6 text-left">
+            <div className="section-label">Example</div>
+            <h2 className="section-title text-4xl font-bold text-[#111111] dark:text-white mb-6">
+              Professional Experience
+            </h2>
+        </div>
 
         <div className="max-w-5xl mx-auto">
-          <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 md:p-12 shadow-xl">
+          <div className="theme-card rounded-2xl p-8 md:p-12 shadow-xl">
             <div className="flex flex-col md:flex-row gap-8 md:gap-12">
               {/* Vertical Roadmap */}
-              <div className="relative flex-shrink-0 w-8 flex justify-center">
+              <div className="relative flex-shrink-0 w-12 flex justify-center">
                 {/* Vertical Line */}
-                <div className="absolute top-0 bottom-0 left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-pink-300 via-pink-400 to-pink-300 dark:from-pink-600 dark:via-pink-500 dark:to-pink-600"></div>
+                <div className="absolute top-0 bottom-0 left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-[#f5cfe0] via-[#f0bfd7] to-[#f5cfe0]"></div>
                 
                 {/* Points */}
                 <div className="relative flex flex-col justify-between py-4" style={{ minHeight: `${experiences.length * 120}px` }}>
@@ -79,13 +82,7 @@ const Experience = () => {
                       aria-label={`View ${exp.title} experience`}
                     >
                       {/* Point - centered on the line */}
-                      <div
-                        className={`w-6 h-6 rounded-full border-4 transition-all duration-300 ${
-                          selectedIndex === index
-                            ? 'bg-accent border-white dark:border-gray-800 shadow-lg shadow-pink-500/50 scale-125'
-                            : 'bg-white dark:bg-gray-800 border-pink-400 dark:border-pink-500 group-hover:border-accent group-hover:bg-pink-200 dark:group-hover:bg-pink-900/50'
-                        }`}
-                      />
+                      <div className={`w-6 h-6 rounded-full transition-all duration-300 ${selectedIndex === index ? 'point-selected' : 'point-default'}`} />
                     </button>
                   ))}
                 </div>
@@ -95,7 +92,7 @@ const Experience = () => {
               <div className="flex-1 min-h-[400px]">
                 <div 
                   key={selectedIndex}
-                  className="bg-gray-50 dark:bg-gray-700/50 rounded-xl p-6 md:p-8 border-2 border-accent/30 h-full transition-all duration-500 ease-in-out animate-fade-in"
+                  className="theme-panel rounded-xl p-6 md:p-8 border-2 border-[#f5cfe0]/70 h-full transition-all duration-500 ease-in-out animate-fade-in"
                 >
                   {(() => {
                     const exp = experiences[selectedIndex]
@@ -103,24 +100,24 @@ const Experience = () => {
                       <>
                         {/* Badge and Period */}
                         <div className="flex items-start justify-between mb-4 flex-wrap gap-2">
-                          <span className={`px-3 py-1 rounded-full text-xs font-semibold border ${getTypeColor()}`}>
+                            <span className={`px-3 py-1 rounded-full text-xs font-semibold ${getTypeColor()}`}>
                             {exp.type === 'internship' ? 'Internship' : exp.type === 'part-time' ? 'Part-time' : 'Volunteer'}
                           </span>
-                          <span className="text-sm text-gray-600 dark:text-gray-400 font-medium">
+                          <span className="text-sm text-[#2f2f2f] dark:text-white font-medium">
                             {exp.period}
                           </span>
                         </div>
 
                         {/* Title and Company */}
-                        <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2">
+                        <h3 className="text-2xl md:text-3xl font-bold text-[#111111] dark:text-white mb-2">
                           {exp.title}
                         </h3>
                         <div className="flex items-center gap-2 mb-6 flex-wrap">
-                          <p className="text-lg font-semibold text-accent">
+                          <p className="text-lg font-semibold text-[#e7a9c3] dark:text-[#f5cfe0]">
                             {exp.company}
                           </p>
-                          <span className="text-gray-400">•</span>
-                          <p className="text-gray-600 dark:text-gray-400">
+                          <span className="text-[#7a7a7a]">•</span>
+                          <p className="text-[#2f2f2f] dark:text-white">
                             {exp.location}
                           </p>
                         </div>
@@ -128,20 +125,17 @@ const Experience = () => {
                         {/* Description */}
                         <ul className="space-y-2 mb-6">
                           {exp.description.map((item, itemIndex) => (
-                            <li key={itemIndex} className="flex items-start gap-3 text-gray-700 dark:text-gray-300">
-                              <span className="text-accent mt-1.5 flex-shrink-0">▸</span>
+                            <li key={itemIndex} className="flex items-start gap-3 text-[#111111] dark:text-white">
+                              <span className="text-[#e7a9c3] mt-1.5 flex-shrink-0">▸</span>
                               <span>{item}</span>
                             </li>
                           ))}
                         </ul>
 
                         {/* Technologies */}
-                        <div className="flex flex-wrap gap-2 pt-4 border-t border-gray-300 dark:border-gray-600">
+                        <div className="flex flex-wrap gap-2 pt-4 border-t border-[#f5cfe0] dark:border-[#f5cfe0]/40">
                           {exp.technologies.map((tech, techIndex) => (
-                            <span
-                              key={techIndex}
-                              className="px-3 py-1 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm rounded-md font-medium border border-gray-200 dark:border-gray-600"
-                            >
+                            <span key={techIndex} className="tag">
                               {tech}
                             </span>
                           ))}
