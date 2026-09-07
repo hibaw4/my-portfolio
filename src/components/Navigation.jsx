@@ -58,7 +58,7 @@ const Navigation = ({ isScrolled }) => {
             <a
               href="#home"
               onClick={(e) => handleNavClick(e, '#home')}
-              className="brand-script text-4xl text-white hover:text-[#e7a9c3] transition-colors duration-200"
+              className="brand-script text-3xl text-white hover:text-[#e7a9c3] transition-colors duration-200"
             >
               hiba.
             </a>

@@ -22,13 +22,13 @@ const projects = [
     technologies: [
       'Bash',
       'Docker',
-      'FastAPI',
       'Angular',
       'Semgrep',
       'Trivy',
       'Gitleaks',
       'OWASP ZAP',
       'tfsec',
+      'Celery',
       'Docker Compose'
     ],
     github: 'https://github.com/SecureDevOps-pfa',
@@ -103,8 +103,8 @@ const projects = [
     slug: 'traveladvisor360',
     categories: ['Full Stack', 'Mobile', 'AI'],
     description:
-      'Mobile travel planning app that simplifies trip planning, searches, and personalized recommendations.',
-    technologies: ['Android (Java)', 'SQLite', 'OpenAI API', 'Geoapify', 'Amadeus'],
+      'Mobile travel planning app for trip planning, searches, and personalized recommendations.',
+    technologies: ['Android Studio', 'Java', 'SQLite', 'OpenAI API', 'Geoapify', 'Amadeus'],
     github: 'https://github.com/hibaw4/TravelAdvisor360',
     demo: '#',
     screenshots: [
@@ -130,7 +130,7 @@ const projects = [
     slug: 'space-gateway',
     categories: ['Full Stack', 'Web', 'DevOps'],
     description:
-      'Interactive web app showcasing space exploration data with real-time information and CI/CD.',
+      'Interactive web app showcasing space exploration data with real-time information and a simple CI/CD pipeline, first exposure to DevOps.',
     technologies: [
       'Spring Boot',
       'React.js',
@@ -143,6 +143,8 @@ const projects = [
     github: 'https://github.com/hibaw4/space-gateway',
     demo: '#',
     screenshots: [
+      '/screenshots/space-gateway/usecase.png',
+      '/screenshots/space-gateway/apis.png',
       '/screenshots/space-gateway/spacegateway1.jpg',
       '/screenshots/space-gateway/spacegateway2.jpg',
       '/screenshots/space-gateway/spacegateway3.jpg',
@@ -203,8 +205,8 @@ const projects = [
     slug: 'internship-management-system',
     categories: ['Full Stack', 'Web', 'Low code', 'Oracle APEX'],
     description:
-      'Decentralized system using Oracle APEX and Oracle Database for real-time internship offer management and applications with interactive dashboard.',
-    technologies: ['Oracle APEX', 'Oracle Database', 'Merise Methodology', 'REST API'],
+      'Decentralized system using Oracle APEX for real-time internship offer management and applications with an interactive dashboard.',
+    technologies: ['Oracle APEX', 'Merise Methodology', 'REST API'],
     github: '',
     demo: '#',
     screenshots: [
