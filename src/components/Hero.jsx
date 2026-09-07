@@ -45,16 +45,16 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="animate-fade-in flex justify-center lg:justify-end">
-            <div className="flex h-[320px] w-full max-w-[320px] items-center justify-center rounded-[2rem] theme-card p-8 text-[var(--text-default)]">
-              <div className="text-center">
-                <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-[#f5cfe0] text-2xl font-bold text-[#111111]">
-                  H
-                </div>
-                <p className="text-lg font-medium">Photo Placeholder</p>
-              </div>
+          {/* <div className="animate-fade-in flex justify-center lg:justify-end">
+            <div className="h-[320px] w-full max-w-[320px] overflow-hidden rounded-[2rem] theme-card">
+              <img
+                src="/portfolio_photo.jpeg"
+                alt="Profile"
+                className="h-full w-full object-cover"
+              />
             </div>
-          </div>
+          </div> */}
+
         </div>
       </div>
     </section>

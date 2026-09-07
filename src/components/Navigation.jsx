@@ -96,7 +96,7 @@ const Navigation = ({ isScrolled }) => {
               </div>
 
               {/* Theme Toggle */}
-              <button
+              {/* <button
                 onClick={toggleTheme}
                 className="p-2 rounded-lg text-white hover:bg-white/5 transition-colors duration-200"
                 aria-label="Toggle theme"
@@ -120,7 +120,7 @@ const Navigation = ({ isScrolled }) => {
                     />
                   </svg>
                 )}
-              </button>
+              </button> */}
 
               {/* Mobile Menu Button */}
               <button
